@@ -1,0 +1,25 @@
+<div class ="overlay"  [ngClass]="{ 'show-overlay': !filterHidden }"  (click)="toggleFilter($event)"></div>
+<div id="filter-container"
+  class="filter-container container"
+  [ngClass]="{ 'show-filter': !filterHidden }"
+>
+  <div [ngClass]="filterHidden ? 'show-filter-btn' : 'hide-filter-btn'">
+    <button  
+      class="btn btn-filter"
+      (click)="toggleFilter($event)"
+    >
+    <span class="menu-icon"></span>
+    <span class="menu-icon"></span>
+    <span class="menu-icon"></span>
+    </button>
+  </div>
+  <h3 class="filter-header">Filters</h3>
+  <div *ngFor="let fltr of filters">
+    <span class="filter-sub-header">{{ fltr.name }}</span>
+    <span *ngFor="let filterItem of fltr.filter">
+      <filter-botton  (click)="toggleFilter($event)" [filter]="getFilterParam(fltr.id, filterItem)"
+        >{{ filterItem }}
+      </filter-botton>
+    </span>
+  </div>
+</div>

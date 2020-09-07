@@ -1,0 +1,11 @@
+<a
+  type="button"
+  class="btn btn-success m-2"
+  routerLink="/"
+  [queryParams]="filter"
+  queryParamsHandling="merge"
+  [class.active] = "isActive"
+  role="button"
+>
+  <ng-content></ng-content>
+</a>

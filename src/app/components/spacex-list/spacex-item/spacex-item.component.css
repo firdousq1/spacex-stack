@@ -1,0 +1,23 @@
+.spacex-item {
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 4px 4px #ccc;
+}
+
+.img-thumbnail {
+  background-color: #f5f5f5;
+}
+td {
+  float: right;
+  clear: left;
+  color: blue;
+}
+li {
+  font-weight: normal;
+  color: blue;
+}
+ul {
+  margin-bottom: 0;
+}
+.mission-name {
+  color: blue;
+}

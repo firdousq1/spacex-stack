@@ -1,0 +1,8 @@
+<div class="row spacex-list">
+  <div *ngFor="let spaceItem of spacexList$ | async" class="col-lg-3 col-md-6 col-sm-12 p-2">
+    <spacex-item [spaceItem] = "spaceItem"></spacex-item>
+  </div>
+  <div *ngIf="(spacexList$ | async)?.length == 0" class="alert alert-primary col-sm-10" role="alert"> 
+     {{msgDataNotFound}}
+  </div>
+</div>

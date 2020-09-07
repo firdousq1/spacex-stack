@@ -1,0 +1,12 @@
+.active {
+    background-color:#27c33a !important;
+    color:black !important;
+}
+
+.btn-success {
+    color:black;
+    background-color: #43941166;
+    border-color: #8ddc9f;
+    cursor: pointer !important;
+    font-weight: 500;
+}
