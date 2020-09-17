@@ -19,6 +19,11 @@ describe('FilterComponent', () => {
     fixture.detectChanges();
   });
 
+  it('should return an object using dynamic key value', () => {
+     const dynamicObject = component.getFilterParam('TestPorpNmae', 'TestValue');
+     expect(dynamicObject).toBeTruthy();
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

@@ -1,38 +1,47 @@
-<div class="card spacex-item">
-  <img [src]="spaceItem.links.mission_patch" class="img-thumbnail m-2" />
-  <div class="card-body">
-    <table>
-      <tr>
-        <th colspan="2" class="mission-name">
-          {{ spaceItem.mission_name }} #{{ spaceItem.flight_number }}
-        </th>
-      </tr>
-      <tr>
-        <th>
-          MissionId: 
-          <ul>
-            <li *ngFor="let missionId of spaceItem.mission_id">
-              {{ missionId }}
-            </li>
-          </ul>
-        </th>
-        <td *ngIf="spaceItem.mission_id.length === 0">N/A</td>
-        <td>
-          
-        </td>
-      </tr>
-      <tr>
-        <th>Launch Year:</th>
-        <td>{{ spaceItem.launch_year }}</td>
-      </tr>
-      <tr>
-        <th>Successful Launch:</th>
-        <td>{{ spaceItem.launch_success }}</td>
-      </tr>
-      <tr>
-        <th>Successful Landing:</th>
-        <td>{{ spaceItem.launch_success }}</td>
-      </tr>
-    </table>
+<article>
+  <div class="card spacex-item" *ngIf="spaceItem">
+    <figure class="p-2">
+      <img *ngIf="spaceItem.links.mission_patch; else ImageNotFound" [src]="spaceItem.links.mission_patch" class="img-thumbnail" />
+      <ng-template #ImageNotFound>
+        <div #img class="img-thumbnail img-not-found">Image Not Available</div>
+      </ng-template>
+    </figure>
+  
+    <div class="card-body">
+      <table>
+        <tr>
+          <th colspan="2" class="mission-name">
+            {{ spaceItem.mission_name }} #{{ spaceItem.flight_number }}
+          </th>
+        </tr>
+        <tr>
+          <th>
+            MissionId: 
+            <ul>
+              <li *ngFor="let missionId of spaceItem.mission_id">
+                {{ missionId }}
+              </li>
+            </ul>
+          </th>
+          <td *ngIf="spaceItem.mission_id.length === 0">N/A</td>
+          <td>
+            
+          </td>
+        </tr>
+        <tr>
+          <th>Launch Year:</th>
+          <td>{{ spaceItem.launch_year }}</td>
+        </tr>
+        <tr>
+          <th>Successful Launch:</th>
+          <td>{{ spaceItem.launch_success }}</td>
+        </tr>
+        <tr>
+          <th>Successful Landing:</th>
+          <td>{{ spaceItem.rocket.first_stage.cores[0].land_success }}</td>
+        </tr>
+      </table>
+    </div>
   </div>
-</div>
+</article>
+

@@ -25,6 +25,15 @@
     height: 30px;
 
 }
+@media(min-width:1441px) {
+    .inner-content {
+       width: 1440px;
+     }
+     #spacex-content {
+         justify-content: center;
+     }
+  }
+
 
 #spacex-content::-webkit-scrollbar {
     width: 10px;
